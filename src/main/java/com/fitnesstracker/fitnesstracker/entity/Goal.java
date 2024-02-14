@@ -16,8 +16,8 @@ public class Goal {
     private double targetValue;
     private LocalDate deadline;
 
-    // Defining the many-to-one relationship with user
-    @ManyToOne
+    // Defining the one-to-one relationship with user
+    @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
 
