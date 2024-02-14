@@ -2,7 +2,7 @@ package com.fitnesstracker.fitnesstracker.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "exercise")
@@ -21,7 +21,7 @@ public class Exercise {
 
     // Defining the many-to-many relationship with Workout
     @ManyToMany(mappedBy = "exercises")
-    private Set<Workout> workouts;
+    private List<Workout> workouts;
 
     public Exercise() {
     }
@@ -64,11 +64,11 @@ public class Exercise {
         this.muscleGroups = muscleGroups;
     }
 
-    public Set<Workout> getWorkouts() {
+    public List<Workout> getWorkouts() {
         return workouts;
     }
 
-    public void setWorkouts(Set<Workout> workouts) {
+    public void setWorkouts(List<Workout> workouts) {
         this.workouts = workouts;
     }
 

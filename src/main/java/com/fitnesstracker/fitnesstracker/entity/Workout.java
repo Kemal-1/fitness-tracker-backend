@@ -3,7 +3,7 @@ package com.fitnesstracker.fitnesstracker.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "workout")
@@ -31,12 +31,12 @@ public class Workout {
             joinColumns = @JoinColumn(name = "workout_id"),
             inverseJoinColumns = @JoinColumn(name = "exercise_id")
     )
-    private Set<Exercise> exercises;
+    private List<Exercise> exercises;
 
     public Workout() {
     }
 
-    public Workout(LocalDate date, int duration, String notes, User user, Set<Exercise> exercises) {
+    public Workout(LocalDate date, int duration, String notes, User user, List<Exercise> exercises) {
         this.date = date;
         this.duration = duration;
         this.notes = notes;
@@ -88,11 +88,11 @@ public class Workout {
         this.user = user;
     }
 
-    public Set<Exercise> getExercises() {
+    public List<Exercise> getExercises() {
         return exercises;
     }
 
-    public void setExercises(Set<Exercise> exercises) {
+    public void setExercises(List<Exercise> exercises) {
         this.exercises = exercises;
     }
 
