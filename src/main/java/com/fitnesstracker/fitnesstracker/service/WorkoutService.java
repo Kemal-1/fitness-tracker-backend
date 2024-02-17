@@ -19,6 +19,8 @@ public interface WorkoutService {
     Optional<List<Exercise>> findExercisesByWorkoutId(Long workoutId);
 
     public Optional<Workout> addExerciseToWorkout(Long workoutId, Long exerciseId);
+
     public Optional<Workout> removeExerciseFromWorkout(Long workoutId, Long exerciseId);
+
     void deleteWorkout(Long workoutId);
 }

@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name="goal")
+@Table(name = "goal")
 public class Goal {
 
     @Id
@@ -78,7 +78,7 @@ public class Goal {
                 ", type='" + type + '\'' +
                 ", targetValue=" + targetValue +
                 ", deadline=" + deadline +
-                ", user=" + user +
+                ", user=" + user.getUsername() +
                 '}';
     }
 }

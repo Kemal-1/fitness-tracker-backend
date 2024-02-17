@@ -1,7 +1,7 @@
 package com.fitnesstracker.fitnesstracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.antlr.v4.runtime.misc.NotNull;
 
 
 @Entity
@@ -23,7 +23,7 @@ public class User {
     private String password;
 
     public User() {
-    };
+    }
 
     public User(String username, String email, String password) {
         this.username = username;
@@ -51,6 +51,7 @@ public class User {
         this.email = email;
     }
 
+    @JsonIgnore // Prevents password to shop up in response objects
     public String getPassword() {
         return password;
     }
@@ -65,7 +66,6 @@ public class User {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
                 '}';
     }
 }

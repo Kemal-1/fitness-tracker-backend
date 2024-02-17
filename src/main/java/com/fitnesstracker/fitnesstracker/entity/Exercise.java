@@ -1,5 +1,6 @@
 package com.fitnesstracker.fitnesstracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class Exercise {
     private String muscleGroups;
 
     // Defining the many-to-many relationship with Workout
+    @JsonIgnore
     @ManyToMany(mappedBy = "exercises")
     private List<Workout> workouts;
 

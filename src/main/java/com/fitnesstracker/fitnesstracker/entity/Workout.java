@@ -3,6 +3,7 @@ package com.fitnesstracker.fitnesstracker.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,7 +22,7 @@ public class Workout {
 
     // Defining the many-to-one relationship with User
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     // Defining the many-to-many relationship with exercise
@@ -31,7 +32,7 @@ public class Workout {
             joinColumns = @JoinColumn(name = "workout_id"),
             inverseJoinColumns = @JoinColumn(name = "exercise_id")
     )
-    private List<Exercise> exercises;
+    private List<Exercise> exercises = new ArrayList<>();
 
     public Workout() {
     }
@@ -103,7 +104,7 @@ public class Workout {
                 ", date=" + date +
                 ", duration=" + duration +
                 ", notes='" + notes + '\'' +
-                ", user=" + user +
+                ", user=" + user.getUsername() + " " + user.getEmail() +
                 ", exercises=" + exercises +
                 '}';
     }
