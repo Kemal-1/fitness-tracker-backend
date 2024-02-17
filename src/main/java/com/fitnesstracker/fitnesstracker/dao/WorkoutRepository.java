@@ -4,7 +4,6 @@ import com.fitnesstracker.fitnesstracker.entity.Workout;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface WorkoutRepository extends JpaRepository<Workout, Long> {
 
