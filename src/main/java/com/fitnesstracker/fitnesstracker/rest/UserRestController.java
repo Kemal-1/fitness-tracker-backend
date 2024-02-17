@@ -19,6 +19,7 @@ public class UserRestController {
 
     @GetMapping("/{userId}")
     public ResponseEntity<User> getUserById(@PathVariable("userId") Long userId) {
+        // Send 200 with user if found. 404 if not found
         return userService.findById(userId)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
@@ -32,6 +33,7 @@ public class UserRestController {
 
     @GetMapping("/by-name/{username}")
     public ResponseEntity<User> getUserByName(@PathVariable("username") String username) {
+        // Send 200 with user if found. 404 if not found
         return userService.findByUserName(username)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
@@ -50,8 +52,11 @@ public class UserRestController {
 
         if (userToDelete.isPresent()) {
             userService.delete(userId);
+
+            // Send 204 No Content after a successful delete
             return ResponseEntity.noContent().build();
         } else {
+            // Send 404 if the user does not exist
             return ResponseEntity.notFound().build();
         }
     }
