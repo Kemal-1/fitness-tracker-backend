@@ -1,4 +1,4 @@
-Fitness Tracker Backend - A Spring Boot Web Application (On Progress...
+Fitness Tracker Backend - A Spring Boot Web Application (🔨 On Progress...)
 Project Overview
 
 This project will be a full-stack fitness tracker web application built using the Spring Boot framework and React / Next.js frontend. It offers users with the following core functionalities:
@@ -21,7 +21,7 @@ Technology Stack
         BCryptPasswordEncoder for secure password management
         MySQL
     Frontend:
-        React / Next.js (Planned as a separate Microservice)
+        React / Next.js (🚧 Planned as a separate Microservice)
 
 Setup Instructions
 
@@ -30,7 +30,7 @@ Setup Instructions
         Maven or Gradle (build tools)
     Clone the repository
     Configure Database:
-        Adjust database settings in application.properties
+        Adjust database settings in application.properties and setup your ".env" file.
         Create the necessary database schema or pass in the "spring.jpa.hibernate.ddl-auto=create" line into application.properties
     Run the Application: mvn spring-boot:run or ./gradlew bootRun
     Access: The application will typically be available at http://localhost:8080
