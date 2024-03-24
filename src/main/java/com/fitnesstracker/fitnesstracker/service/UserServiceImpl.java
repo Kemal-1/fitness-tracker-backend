@@ -1,6 +1,7 @@
 package com.fitnesstracker.fitnesstracker.service;
 
 import com.fitnesstracker.fitnesstracker.dao.UserRepository;
+import com.fitnesstracker.fitnesstracker.dto.UserResponseDTO;
 import com.fitnesstracker.fitnesstracker.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -38,6 +39,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> findByUserName(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public UserResponseDTO makeResponseDTO(User user) {
+        return new UserResponseDTO(user.getId(), user.getUsername(), user.getEmail());
     }
 
     @Override

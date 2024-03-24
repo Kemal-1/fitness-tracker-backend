@@ -1,5 +1,6 @@
 package com.fitnesstracker.fitnesstracker.service;
 
+import com.fitnesstracker.fitnesstracker.dto.UserResponseDTO;
 import com.fitnesstracker.fitnesstracker.entity.User;
 
 import java.util.List;
@@ -16,5 +17,7 @@ public interface UserService {
     void delete(Long userId);
 
     Optional<User> findByUserName(String username);
+
+    UserResponseDTO makeResponseDTO(User user);
 
 }

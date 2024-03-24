@@ -1,37 +1,23 @@
-package com.fitnesstracker.fitnesstracker.entity;
+package com.fitnesstracker.fitnesstracker.dto;
 
-import jakarta.persistence.*;
+public class UserResponseDTO {
 
-
-@Entity
-@Table(name = "user")
-public class User {
-
-    // Define table fields
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(unique = true, nullable = false)
     private String username;
-
-    @Column(unique = true, nullable = false)
     private String email;
 
-    @Column(nullable = false)
-    private String password;
-
-    public User() {
-    }
-
-    public User(String username, String email, String password) {
+    public UserResponseDTO(Long id, String username, String email) {
+        this.id = id;
         this.username = username;
         this.email = email;
-        this.password = password;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -50,17 +36,9 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     @Override
     public String toString() {
-        return "User{" +
+        return "UserResponseDTO{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
